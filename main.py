@@ -2,14 +2,14 @@ from fasthtml.common import *
 
 hdrs = (
     Link(rel='stylesheet', href='style.css', type='text/css'),
-    Script("htmx.logAll();") # debug HTMX events
+    # Script("htmx.logAll();") # debug HTMX events
 )
 
 app, rt = fast_app(hdrs=hdrs)
 
 @rt("/")
 def get():
-    return Titled("FastHTML Demo",
+    return Titled("FastHTML Demo - Git Workshop",
         P("Welcome to FastHTML!"),
         P("This is NOT simple demo for the Git workshop."),
         Button("Click me!", hx_post="/clicked", hx_target="#result"),
